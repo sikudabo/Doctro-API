@@ -11,11 +11,12 @@ rdfStore.create((err, store) => {
     store.load('text/turtle', rdf, (s, d) => {
         const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                        PREFIX dbo: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
-                       SELECT ?type WHERE {
+                       SELECT ?symptom WHERE {
                          ?covid foaf:name "Covid-19"@en .
                          ?covid dbo:type ?type .
+                         ?covid dbo:symptom ?symptom .
                        }
-        `
+        `;
         store.execute(query, (success, results) => {
             console.log('The results are:', results);
         });
