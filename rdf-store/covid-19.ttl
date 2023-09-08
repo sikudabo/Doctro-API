@@ -1,6 +1,6 @@
 <https://www.doctro.com/resource/covid_19> <http://xmlns.com/foaf/0.1/name> "Covid-19"@en .
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/type> <http://xmlns.com/foaf/0.1/Disease> .
-<https://www.doctro.com/resource/covid_19> <http://purl.org/dc/elements/1.1/description> "Covid 19 is a really bad disease"@en .
+<https://www.doctro.com/resource/covid_19> <http://purl.org/dc/elements/1.1/description> "Coronavirus disease (COVID-19) is a contagious disease caused by the virus SARS-CoV-2. COVID‑19 transmits when infectious particles are breathed in or come into contact with the eyes, nose, or mouth. The risk is highest when people are in close proximity, but small airborne particles containing the virus can remain suspended in the air and travel over longer distances, particularly indoors. Transmission can also occur when people touch their eyes, nose or mouth after touching surfaces or objects that have been contaminated by the virus. People remain contagious for up to 20 days and can spread the virus even if they do not develop symptoms."@en .
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/cough> .
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/shortness_of_breadth> .
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/fever> .
@@ -13,8 +13,14 @@
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/loss_of_taste> .
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/lost_of_smell> .
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/congestion> .
-<https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/runny_nose .
+<https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/runny_nose> .
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/nausea> .
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/vomitting> .
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/diarrhea> .
+<https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/tiredness> .
+<https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/chest_pain> .
+<https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/confusion> .
+<https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/gray_lips> .
+<https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/blue_lips> .
+<https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/pale_lips> .
 <https://www.doctro.com/resource/covid_19> <https://www.doctro.com/ontology/discoveredDate> "2019-12-31"^^<http://www.w3.org/2001/XMLSchema#date> .
