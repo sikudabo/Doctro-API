@@ -9,6 +9,8 @@
   "author": "Simeon Ikudabo",
   "license": "ISC",
   "dependencies": {
+    "cerebrum.js": "^1.0.4",
+    "corenlp": "^1.5.2",
     "express": "^4.18.2",
     "rdfstore": "^0.9.17"
   }
