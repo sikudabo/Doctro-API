@@ -258,6 +258,38 @@ const handleQuery = async (questionType) => {
         });
         return;
     }
+
+    if (questionType === 'other names') {
+        rdfStore.create((err, store) => {
+            if (err) {
+                console.log('Error:', err.message);
+                return;
+            }
+        
+            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            store.load('text/turtle', rdf, (s, d) => {
+                const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                               PREFIX dbd: <https://www.doctro.com/ontology/>
+                               PREFIX dbo: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+                               PREFIX dbr: <http://purl.org/dc/elements/1.1/>
+                               SELECT ?otherName WHERE {
+                                 ?covid foaf:name "Covid-19"@en .
+                                 ?covid foaf:otherName ?otherName .
+                               }
+                `;
+                store.execute(query, (success, results) => {
+                    let myStrings = [];
+
+                    results.forEach((otherName) => {
+                        myStrings.push(otherName.otherName.value);
+                    });
+
+                    console.log('Other names for covid-19 are', myStrings.toString().replaceAll(',', ', '));
+                });
+            });
+        });
+        return;
+    }
 }
 
 const newCerebrum = new cerebrum();
@@ -326,6 +358,13 @@ const dataset = [
           "continent least deaths",
         ],
     },
+    {
+        intent: "bot.otherNames",
+        utterances: ["what are other names for covid-19", "what are other names for covid 19", "other names for covid", "what are other names for covid", "synonyms for covid-19", "alternative names for covid", "other names for sar-cov-2", "other names for sars cov-2", "other names for 2019-nCoV", "synonyms for sars cov-2", "what are other names for the wuhan virus", "is wuhan virus a name for covid-19", "nicknames for covid-19", "what nicknames does covid-19 have", "which other names does covid-19 have", "what are other names for covid", "what are other names for caronovirus"],
+        answers: [
+          "other names",
+        ],
+    },
 ];
 
 const train = async () => {
@@ -345,7 +384,7 @@ const getResponse = async (question) => {
 }
 
 const askQuestion = async () => {
-    const response = await getResponse('where have there been the most covid deaths');
+    const response = await getResponse('what are other names for covid');
     await handleQuery(response);
 }
 
