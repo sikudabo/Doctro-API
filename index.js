@@ -174,6 +174,62 @@ const handleQuery = async (questionType) => {
         });
         return;
     }
+
+    if (questionType === 'total cases') {
+        rdfStore.create((err, store) => {
+            if (err) {
+                console.log('Error:', err.message);
+                return;
+            }
+        
+            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            store.load('text/turtle', rdf, (s, d) => {
+                const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                               PREFIX dbd: <https://www.doctro.com/ontology/>
+                               PREFIX dbo: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+                               PREFIX dbr: <http://purl.org/dc/elements/1.1/>
+                               SELECT ?totalCases WHERE {
+                                 ?covid foaf:name "Covid-19"@en .
+                                 ?covid dbo:totalCases ?totalCases .
+                               }
+                `;
+                store.execute(query, (success, results) => {
+                    const stringNum = results[0].totalCases.value;
+                    const result = `There have been ${stringNum} total Covid-19 cases since 2019.`;
+                    console.log(result);
+                });
+            });
+        });
+        return;
+    }
+
+    if (questionType === 'continent most deaths') {
+        rdfStore.create((err, store) => {
+            if (err) {
+                console.log('Error:', err.message);
+                return;
+            }
+        
+            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            store.load('text/turtle', rdf, (s, d) => {
+                const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                               PREFIX dbd: <https://www.doctro.com/ontology/>
+                               PREFIX dbo: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+                               PREFIX dbr: <http://purl.org/dc/elements/1.1/>
+                               SELECT ?regionMostDeaths WHERE {
+                                 ?covid foaf:name "Covid-19"@en .
+                                 ?covid dbo:regionMostDeaths ?regionMostDeaths .
+                               }
+                `;
+                store.execute(query, (success, results) => {
+                    const answer = results[0].regionMostDeaths.value;
+                    const result = `${answer} is the region with the most Covid-19 deaths since the pandemic began.`;
+                    console.log(result);
+                });
+            });
+        });
+        return;
+    }
 }
 
 const newCerebrum = new cerebrum();
@@ -221,6 +277,20 @@ const dataset = [
           "death toll",
         ],
     },
+    {
+        intent: "bot.totalCases",
+        utterances: ["how many times has covid-19 been diagnosed", "instances of covid", "instances of covid-19", "total cases", "how many covid-19 cases have their been", "total number of covid-19 cases", "covid 19 cases", "number of cases", "how many covid-19 cases have their been", "total number of sars cov-2 cases", "how many sars cov-2 cases", "total amount of confirmed cases", "how many covid-19 cases have their been", "total number of covid cases", "estimate of how many covid-19 cases there have been"],
+        answers: [
+          "total cases",
+        ],
+    },
+    {
+        intent: "bot.mostDeathsRegion",
+        utterances: ["which region has the most covid deaths", "which content has the most covid deaths", "most covid deaths by region", "which region has the highest death toll", "highest death toll by region", "which continent has the most covid deaths", "most covid-19 deaths continent", "continent with most covid deaths", "highest covid deaths region", "continent with highest death toll"],
+        answers: [
+          "continent most deaths",
+        ],
+    },
 ];
 
 const train = async () => {
@@ -240,7 +310,7 @@ const getResponse = async (question) => {
 }
 
 const askQuestion = async () => {
-    const response = await getResponse('number of covid 19 deaths');
+    const response = await getResponse('How many covid cases have their been since the pandemic began');
     await handleQuery(response);
 }
 
