@@ -290,6 +290,33 @@ const handleQuery = async (questionType) => {
         });
         return;
     }
+
+    if (questionType === 'mild illness') {
+        rdfStore.create((err, store) => {
+            if (err) {
+                console.log('Error:', err.message);
+                return;
+            }
+        
+            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            store.load('text/turtle', rdf, (s, d) => {
+                const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                               PREFIX dbd: <https://www.doctro.com/ontology/>
+                               PREFIX dbo: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+                               PREFIX dbr: <http://purl.org/dc/elements/1.1/>
+                               SELECT ?mildSymptomsPercentage WHERE {
+                                 ?covid foaf:name "Covid-19"@en .
+                                 ?covid dbo:mildSymptomsPercentage ?mildSymptomsPercentage .
+                               }
+                `;
+                store.execute(query, (success, results) => {
+                    const answer = `Covid-19 symptoms are mild ${results[0].mildSymptomsPercentage.value} of the time.`;
+                    console.log(answer);
+                });
+            });
+        });
+        return;
+    }
 }
 
 const newCerebrum = new cerebrum();
@@ -365,6 +392,13 @@ const dataset = [
           "other names",
         ],
     },
+    {
+        intent: "bot.mildSymptomPercentage",
+        utterances: ["what percentage of the time are covid cases minor", "how often is covid not that serious", "how common are mild cases of covid", "how often are cases not that serious", "what are the chances a covid case will not be serious", "what percentage of people develop mild symptoms", "what % of people develop minor symptoms", "what are the odds of having mild symptoms", "how many people only have mild symptoms", "how many people have mild symptoms", "how often are covid cases mild or minor", "is it common to only have mild symptoms from covid", "how likely is it to have mild symptoms", "how common is it to only have mild symptoms", "is it probable to only have mild symptoms", "what percentage of the population has mild symptoms", "how many patients have mild symptoms", "how often is covid-19 mild", "how likely is it symptoms are mild if you get sick", "what are the odds a covid-19 case will be mild", "what are the chances covid will be mild", "what are the odds a covid case will be mild", "likelihood of mild illness", "what is the likelihood of mild illness", "what is the probability of mild illness", "is it common for covid symptoms to not be serious"],
+        answers: [
+          "mild illness",
+        ],
+    },
 ];
 
 const train = async () => {
@@ -384,7 +418,7 @@ const getResponse = async (question) => {
 }
 
 const askQuestion = async () => {
-    const response = await getResponse('what are other names for covid');
+    const response = await getResponse('define covid 19');
     await handleQuery(response);
 }
 

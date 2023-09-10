@@ -12,6 +12,7 @@
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/totalCases> "770,437,327".
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/regionLeastDeaths> "Africa"@en .
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/regionMostDeaths> "Europe"@en .
+<https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/mildSymptomsPercentage> "81%"@en .
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/cough> .
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/shortness_of_breadth> .
 <https://www.doctro.com/resource/covid_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns/symptom> <http://xmlns.com/foaf/0.1/fever> .
