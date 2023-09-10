@@ -146,6 +146,34 @@ const handleQuery = async (questionType) => {
         });
         return;
     }
+
+    if (questionType === 'death toll') {
+        rdfStore.create((err, store) => {
+            if (err) {
+                console.log('Error:', err.message);
+                return;
+            }
+        
+            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            store.load('text/turtle', rdf, (s, d) => {
+                const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                               PREFIX dbd: <https://www.doctro.com/ontology/>
+                               PREFIX dbo: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+                               PREFIX dbr: <http://purl.org/dc/elements/1.1/>
+                               SELECT ?deathToll WHERE {
+                                 ?covid foaf:name "Covid-19"@en .
+                                 ?covid dbo:deathToll ?deathToll .
+                               }
+                `;
+                store.execute(query, (success, results) => {
+                    const stringNum = results[0].deathToll.value;
+                    const result = `${stringNum} have died from Covid-19 since 2019.`;
+                    console.log(result);
+                });
+            });
+        });
+        return;
+    }
 }
 
 const newCerebrum = new cerebrum();
@@ -186,6 +214,13 @@ const dataset = [
           "where did covid start"
         ],
     },
+    {
+        intent: "bot.totalDeaths",
+        utterances: ["how many people have died from covid-19", "how many people have died from covid", "how many people have died from sars cov-2", "death toll", "what is the covid death toll", "total deaths from covid", "what is the amount of deaths from covid-19", "what is the amount of deaths from covid", "how many deaths from covid", "total deaths from covid", "covid-19 death toll", "covid-19 deaths total", "how many people have died from covid since the pandemic", "total number of covid deaths", "total number of deaths", "count of covid deaths", "how many have died from sars cov-2", "sars cov-2 death toll"],
+        answers: [
+          "death toll",
+        ],
+    },
 ];
 
 const train = async () => {
@@ -205,7 +240,7 @@ const getResponse = async (question) => {
 }
 
 const askQuestion = async () => {
-    const response = await getResponse('where did covid 19 originate');
+    const response = await getResponse('number of covid 19 deaths');
     await handleQuery(response);
 }
 
