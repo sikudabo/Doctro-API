@@ -317,6 +317,34 @@ const handleQuery = async (questionType) => {
         });
         return;
     }
+
+    if (questionType === 'severe illness') {
+        console.log('I am being hit');
+        rdfStore.create((err, store) => {
+            if (err) {
+                console.log('Error:', err.message);
+                return;
+            }
+        
+            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            store.load('text/turtle', rdf, (s, d) => {
+                const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                               PREFIX dbd: <https://www.doctro.com/ontology/>
+                               PREFIX dbo: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+                               PREFIX dbr: <http://purl.org/dc/elements/1.1/>
+                               SELECT ?severeSymptomsPercentage WHERE {
+                                 ?covid foaf:name "Covid-19"@en .
+                                 ?covid dbo:severeSymptomsPercentage ?severeSymptomsPercentage .
+                               }
+                `;
+                store.execute(query, (success, results) => {
+                    const answer = `Covid-19 symptoms are severe in ${results[0].severeSymptomsPercentage.value} of cases.`;
+                    console.log(answer);
+                });
+            });
+        });
+        return;
+    }
 }
 
 const newCerebrum = new cerebrum();
@@ -399,6 +427,13 @@ const dataset = [
           "mild illness",
         ],
     },
+    {
+        intent: "bot.severeSymptomPercentage",
+        utterances: ["what percentage of the time are covid cases severe", "how often is covid serious", "how common are severe cases of covid", "how often are cases serious", "what are the chances a covid case will be serious", "what percentage of people develop severe symptoms", "what % of people develop servere symptoms", "what are the odds of having servere symptoms", "how many people have servere symptoms", "how many people have servere symptoms", "how often are covid cases serverer", "is it common to only have servere symptoms from covid", "how likely is it to have servere symptoms", "how common is it to have servere symptoms", "is it probable to severe symptoms", "what percentage of the population has servere symptoms", "how many patients have servere symptoms", "how often is covid-19 servere", "how likely is it symptoms are servere if you get sick", "what are the odds a covid-19 case will be severe", "what are the chances covid will be severe", "what are the odds a covid case will be severe", "likelihood of severe illness", "what is the likelihood of servere illness", "what is the probability of servere illness", "is it common for covid symptoms to be severe"],
+        answers: [
+          "severe illness",
+        ],
+    },
 ];
 
 const train = async () => {
@@ -418,7 +453,7 @@ const getResponse = async (question) => {
 }
 
 const askQuestion = async () => {
-    const response = await getResponse('define covid 19');
+    const response = await getResponse('how often is covis serious');
     await handleQuery(response);
 }
 
