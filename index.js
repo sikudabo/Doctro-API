@@ -230,6 +230,34 @@ const handleQuery = async (questionType) => {
         });
         return;
     }
+
+    if (questionType === 'continent least deaths') {
+        rdfStore.create((err, store) => {
+            if (err) {
+                console.log('Error:', err.message);
+                return;
+            }
+        
+            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            store.load('text/turtle', rdf, (s, d) => {
+                const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                               PREFIX dbd: <https://www.doctro.com/ontology/>
+                               PREFIX dbo: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+                               PREFIX dbr: <http://purl.org/dc/elements/1.1/>
+                               SELECT ?regionLeastDeaths WHERE {
+                                 ?covid foaf:name "Covid-19"@en .
+                                 ?covid dbo:regionLeastDeaths ?regionLeastDeaths .
+                               }
+                `;
+                store.execute(query, (success, results) => {
+                    const answer = results[0].regionLeastDeaths.value;
+                    const result = `${answer} is the region with the least Covid-19 deaths since the pandemic began.`;
+                    console.log(result);
+                });
+            });
+        });
+        return;
+    }
 }
 
 const newCerebrum = new cerebrum();
@@ -291,6 +319,13 @@ const dataset = [
           "continent most deaths",
         ],
     },
+    {
+        intent: "bot.leastDeathsByRegion",
+        utterances: ["which contenent has the fewest deaths", "which area has the fewest deaths", "which reigion has the fewest covid-19 deaths", "which region has the least covid-19 deaths", "which country has the least covid-19 deaths", "who has the least covid-19 deaths", "does africa have the least covid-19 deaths", "where have their been the fewest covid deaths", "where have their beeen the fewest deaths from covid-19", "which continent has the least covid-19 deaths", "which country has the least covid-19 cases", "which area has the fewest covid-19 cases"],
+        answers: [
+          "continent least deaths",
+        ],
+    },
 ];
 
 const train = async () => {
@@ -310,7 +345,7 @@ const getResponse = async (question) => {
 }
 
 const askQuestion = async () => {
-    const response = await getResponse('How many covid cases have their been since the pandemic began');
+    const response = await getResponse('where have there been the most covid deaths');
     await handleQuery(response);
 }
 
