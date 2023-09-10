@@ -345,6 +345,34 @@ const handleQuery = async (questionType) => {
         });
         return;
     }
+
+    if (questionType === 'critical illness') {
+        console.log('I am being hit');
+        rdfStore.create((err, store) => {
+            if (err) {
+                console.log('Error:', err.message);
+                return;
+            }
+        
+            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            store.load('text/turtle', rdf, (s, d) => {
+                const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                               PREFIX dbd: <https://www.doctro.com/ontology/>
+                               PREFIX dbo: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+                               PREFIX dbr: <http://purl.org/dc/elements/1.1/>
+                               SELECT ?criticalSymptomsPercentage WHERE {
+                                 ?covid foaf:name "Covid-19"@en .
+                                 ?covid dbo:criticalSymptomsPercentage ?criticalSymptomsPercentage .
+                               }
+                `;
+                store.execute(query, (success, results) => {
+                    const answer = `Covid-19 symptoms are crtical in ${results[0].criticalSymptomsPercentage.value} of cases.`;
+                    console.log(answer);
+                });
+            });
+        });
+        return;
+    }
 }
 
 const newCerebrum = new cerebrum();
@@ -460,7 +488,7 @@ const getResponse = async (question) => {
 }
 
 const askQuestion = async () => {
-    const response = await getResponse('how often is covis serious');
+    const response = await getResponse('how often is covis critical');
     await handleQuery(response);
 }
 
