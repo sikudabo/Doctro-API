@@ -1,5 +1,6 @@
 function punctuationParser(question) {
     let newQuestion = question.replaceAll(',', '');
+    newQuestion = newQuestion.toLowerCase();
     newQuestion = newQuestion.replaceAll('.', '');
     newQuestion = newQuestion.replaceAll('!', '');
     newQuestion = newQuestion.replaceAll('?', '');

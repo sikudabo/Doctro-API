@@ -407,6 +407,31 @@ const handleQuery = async (questionType, res) => {
     else if (questionType === 'can asymptomatic spread') {
         const answer = 'Yes, people who are asymptomatic can still spread Covid-19 to other individuals. Make sure to be safe around those you come in contact with including family, friends, schoolmates, co-workers, people with compromised immune systems and others.';
         res.status(200).json({ answer, isSuccess: true });
+    } else if (questionType === 'onset period') {
+        rdfStore.create((err, store) => {
+            if (err) {
+                console.log('Error:', err.message);
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
+            }
+        
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
+            store.load('text/turtle', rdf, (s, d) => {
+                const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                               PREFIX dbd: <https://www.doctro.com/ontology/>
+                               PREFIX dbo: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+                               PREFIX dbr: <http://purl.org/dc/elements/1.1/>
+                               SELECT ?diseaseOnset WHERE {
+                                 ?covid foaf:name "Covid-19"@en .
+                                 ?covid dbr:diseaseOnset ?diseaseOnset .
+                               }
+                `;
+                store.execute(query, (success, results) => {
+                    const answer = results[0].diseaseOnset.value;
+                    res.status(200).json({ answer, isSuccess: true });
+                });
+            });
+        });
+        return;
     }
 
     else {

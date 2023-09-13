@@ -102,7 +102,14 @@ const dataset = [
       answers: [
         "can asymptomatic spread",
       ],
-    }
+    },
+    {
+      intent: "bot.incubationPeriod",
+      utterances: ["covid incubation period", "what are the odds of catching covid", "what is the onset time for covid", "what is the symptom onset time", "onset time for symptoms", "what is the incubation period for covid", "what is the incubation period for covid-19", "what is the incubation period for covid19", "when will you start experiencing symptoms with covid", "how long does it take to show symptoms", "when do people become symptomatic", "how long after infection do symptoms show", "how long after infection does it take for people to get", "when do people show signs of being sick", "how long does it take to show symptoms", "incubation period for covid", "how long does it take to get sick with covid", "when do people get sick with covid", "when will i show signs i am sick", "when does a person get sick with covid", "what is the onset period for covid", "when do people get sick with covid-19", "how long does it take to show symptoms", "how soon after infection does someone get sick"],
+      answers: [
+        "onset period",
+      ],
+    },
 ];
 
 module.exports = dataset;
