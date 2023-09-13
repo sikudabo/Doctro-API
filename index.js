@@ -9,6 +9,7 @@ const logger = require('morgan');
 const cerebrum = require('cerebrum.js');
 const fs = require('fs');
 const rdfStore = require('rdfstore');
+const { AnswerQuestion } = require('./api');
 
 app.set('appName', 'DoctroAPI');
 app.set('port', process.env.PORT || 3001);
@@ -510,6 +511,8 @@ const askQuestion = async () => {
 }
 
 setTimeout(askQuestion, 1000); */
+
+app.use(AnswerQuestion);
 
 app.get('*', (req, res) => {
     res.status(200).json({ status: 'running', message: 'Welcome to the Doctro API!' });
