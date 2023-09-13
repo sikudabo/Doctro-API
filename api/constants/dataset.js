@@ -89,7 +89,10 @@ const dataset = [
         answers: [
           "critical illness",
         ],
-    },
+    },{
+      intent: "bot.asymptomaticSymptomPercentage",
+      utterances: ["how many people are asymptomatic", "how often are people asymptomatic", "how often do people not hvae symptoms", "is it common for people to have no symptoms", "wnat percentage of people have no covid-19 symptoms", "what percentage of those infected are asymptomatic", "percentage of asymptomatic covid-19 cases", "how many people with covid-19 show no signs", "what percentage of the infected have no symptoms", "how many people have no covid-19 symptoms", "what percentage of people never show signts of being sick with covid", "what percentage of people are asymptomatic after being infected with covid 19", "percentage of people showing no covid-19 symptoms", "how many cases are asymptomatic", "how many people dont know that they have covid"]
+    }
 ];
 
 module.exports = dataset;
