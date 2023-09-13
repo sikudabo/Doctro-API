@@ -152,6 +152,13 @@ const dataset = [
         "transmission",
       ],
     },
+    {
+      intent: "bot.entryPoints",
+      utterances: ["which pathways does covid take to get in the body", "which pathways does covid take to get into the body", "which pathways put coronavirus in the body", "what pathways put covid in the body", "what are the pathways through the body to catch an infection", "pathways for covid to get in body", "what are the entry points from covid", "can you be infected through the nose", "can you be infected through the mouth", "can you be infected through the eyes", "can i bet infected through my mouth", "can i bet infected through my nose", "can i bet infected through my eyes", "where does covid enter the body", "how does covid enter the body", "how did covid enter my body", "where does covid enter", "what are the points of contact that leads to covid spreading", "where can covid enter the body", "how does covid get inside of the body", "where does covid go to get inside of the body", "can you get coronavirus through the eyes", "can you get infeced through the eyes", "can you get infected through the mouth", "can you get infected through the nose", "where can covid19 enter to infect you", "where can covid19 enter to infect me", "where can covid enter to infect a person", "routes for covid to enter the body"],
+      answers: [
+        "entry points",
+      ],
+    },
 ];
 
 module.exports = dataset;
