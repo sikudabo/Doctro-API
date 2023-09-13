@@ -36,7 +36,7 @@ const handleQuery = async (questionType) => {
                 return;
             }
         
-            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -62,7 +62,7 @@ const handleQuery = async (questionType) => {
                 return;
             }
         
-            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -95,7 +95,7 @@ const handleQuery = async (questionType) => {
                 return;
             }
         
-            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -123,7 +123,7 @@ const handleQuery = async (questionType) => {
                 return;
             }
         
-            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -151,7 +151,7 @@ const handleQuery = async (questionType) => {
                 return;
             }
         
-            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -179,7 +179,7 @@ const handleQuery = async (questionType) => {
                 return;
             }
         
-            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -207,7 +207,7 @@ const handleQuery = async (questionType) => {
                 return;
             }
         
-            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -235,7 +235,7 @@ const handleQuery = async (questionType) => {
                 return;
             }
         
-            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -263,7 +263,7 @@ const handleQuery = async (questionType) => {
                 return;
             }
         
-            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -295,7 +295,7 @@ const handleQuery = async (questionType) => {
                 return;
             }
         
-            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -323,7 +323,7 @@ const handleQuery = async (questionType) => {
                 return;
             }
         
-            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -351,7 +351,7 @@ const handleQuery = async (questionType) => {
                 return;
             }
         
-            const rdf = fs.readFileSync(__dirname + '/rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
