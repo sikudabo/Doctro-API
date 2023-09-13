@@ -110,6 +110,20 @@ const dataset = [
         "onset period",
       ],
     },
+    {
+      intent: "bot.longCovidDescription",
+      utterances: ["what is longhaulers", "how do you dine long covid", "definition of long covid", "what is long covid", "how is long covid defined", "describe long covid", "define long covid", "what do i do if i have long covid", "how do i feel if i have long covid", "do my symptoms mean i have long convid", "how do i find out if i have long covid", "how do i know if i have long covid", "what are the symptoms of long covid", "what is long haulers", "how do i know if i have longhaulers", "what do i do if my symptoms persist", "why have my symptoms persisted", "why are my symptoms not getting better", "what do i do if i have long haulers", "definition of long covid", "how is long covid defined", "what does it mean if my symptoms wont go awaay", "persistent shortness of breath", "persistent breathing problems", "long term consequences of covid 19"],
+      answers: [
+        "long covid defined",
+      ],
+    },
+    {
+      intent: "bot.pregnancyRisk",
+      utterances: ["what is the risk if you are pregnant", "what can happy to pregnant women", "pregnancy and covid", "pregnancy complications covid", "pregnancy and covid-19", "what are my risk if i am pregnant with covid", "is covid bad for pregnant women", "what are the dangers of being pregnant with covid", "can a fetus catch covid", "what happens if a pregnant woman is infected", "infected with covid while pregnant", "infected with covid-19 and pregnant", "pregnancy risk covid-19", "what happens if i am pregnant with covid", "what is the risk of being pregnant with covid 19", "pregnancy dangers", "can a baby be hurt if the mother is pregnant and has covid", "what can happen to a baby if the mother is infected", "what happens to an embryo if the mother is infected", "pregnancy risk from covid-19", "pregnac & covid 19", "what happens to pregnant women who have covid", "what should i do if am infected with covid while pregnant", "covid-19 pregnant", "what is the risk to pregnant women", "are pregnant women in danger if they are pregnant with covid", "what happens to pregnant women who have covid"],
+      answers: [
+        "pregnancy risk",
+      ],
+    },
 ];
 
 module.exports = dataset;
