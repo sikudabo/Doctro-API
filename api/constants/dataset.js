@@ -8,7 +8,7 @@ const dataset = [
     },
     {
         intent: "bot.whenWasCovidDiscovered",
-        utterances: ["when was covid-19 discovered", "when was covid discovered", "which date was covid discovered", "what time was covid-19 discovered", "when did we learn about covid-19", "when did we learn about covid", "on which date did we find out about covid"],
+        utterances: ["when did covid start", "when did the pandemic start", "when did the pandemic begin", "when was covid-19 discovered", "when was covid discovered", "which date was covid discovered", "what time was covid-19 discovered", "when did we learn about covid-19", "when did we learn about covid", "on which date did we find out about covid"],
         answers: [
           "covid discovered date"
         ],
@@ -43,7 +43,7 @@ const dataset = [
     },
     {
         intent: "bot.totalCases",
-        utterances: ["how many times has covid-19 been diagnosed", "how many have caught covid", "how many caught covid-19", "how many people caught the disease", "how many people have caught covid", "instances of covid", "instances of covid-19", "total cases", "how many covid-19 cases have their been", "total number of covid-19 cases", "covid 19 cases", "number of cases", "how many covid-19 cases have their been", "total number of sars cov-2 cases", "how many sars cov-2 cases", "total amount of confirmed cases", "how many covid-19 cases have their been", "total number of covid cases", "estimate of how many covid-19 cases there have been"],
+        utterances: ["how many covid-19 infections have their been", "how many people have been infected with covid-19", "how many infections have their been", "how many total covid-19 infections have their been", "how many people do we know have been infected with covid", "how many times has covid-19 been diagnosed", "how many have caught covid", "how many caught covid-19", "how many people caught the disease", "how many people have caught covid", "instances of covid", "instances of covid-19", "total cases", "how many covid-19 cases have their been", "total number of covid-19 cases", "covid 19 cases", "number of cases", "how many covid-19 cases have their been", "total number of sars cov-2 cases", "how many sars cov-2 cases", "total amount of confirmed cases", "how many covid-19 cases have their been", "total number of covid cases", "estimate of how many covid-19 cases there have been"],
         answers: [
           "total cases",
         ],
@@ -64,7 +64,7 @@ const dataset = [
     },
     {
         intent: "bot.otherNames",
-        utterances: ["what are other names for covid-19", "what are other names for covid 19", "other names for covid", "what are other names for covid", "synonyms for covid-19", "alternative names for covid", "other names for sar-cov-2", "other names for sars cov-2", "other names for 2019-nCoV", "synonyms for sars cov-2", "what are other names for the wuhan virus", "is wuhan virus a name for covid-19", "nicknames for covid-19", "what nicknames does covid-19 have", "which other names does covid-19 have", "what are other names for covid", "what are other names for caronovirus"],
+        utterances: ["what else is else is covid called", "what else is coronavirus called", "what is covid-19 also known as", "also known as", "what are other names for covid-19", "what are other names for covid 19", "other names for covid", "what are other names for covid", "synonyms for covid-19", "alternative names for covid", "other names for sar-cov-2", "other names for sars cov-2", "other names for 2019-nCoV", "synonyms for sars cov-2", "what are other names for the wuhan virus", "is wuhan virus a name for covid-19", "nicknames for covid-19", "what nicknames does covid-19 have", "which other names does covid-19 have", "what are other names for covid", "what are other names for caronovirus"],
         answers: [
           "other names",
         ],
@@ -133,9 +133,23 @@ const dataset = [
     },
     {
       intent: "bot.liverRisk",
-      utterances: ["what percentage of people have elevated liver enzymes after covid", "how many people have liver issues after covid", "can covid impact your liver", "can covid destroy your liver", "elevated liver enzymes after covid", "what can happen to your liver after infection", "can covid 19 injure your liver", "what percentage of people have liver issues after covid", "how many people have liver issues after infection", "percentage of people with liver complications after covid"],
+      utterances: ["what is the risk to my liver from covid-19", "what is the risk of liver problems from covid", "what percentage of people have elevated liver enzymes after covid", "how many people have liver issues after covid", "can covid impact your liver", "can covid destroy your liver", "elevated liver enzymes after covid", "what can happen to your liver after infection", "can covid 19 injure your liver", "what percentage of people have liver issues after covid", "how many people have liver issues after infection", "percentage of people with liver complications after covid"],
       answers: [
         "liver risk",
+      ],
+    },
+    {
+      intent: "bot.covidCause",
+      utterances: ["how is covid caused", "how is covid-19 caused", "how is coronavirus caused", "which strain causes coronavirus", "which strain causes covid", "which strand causes coronavirus", "which strand leads to covid", "which strain causes covid-19", "which strain of virus causes covid", "what causes covid", "what causes coronavirus", "what leads to coronavirus", "is covid sars", "leads to covid-19", "what causes covid-19", "what causes a covid infection", "what leads to a covid infection", "what happens that leads to covid", "what starts a covid infection", "cause of coronavirus", "cause of covid", "what causes someone to be infected with covid", "'what leads to a covid infection", "which virus causes covid19", "what virus causes covid", "which variant of sars causes a covid infection"],
+      answers: [
+        "covid cause",
+      ],
+    },
+    {
+      intent: "bot.transmission",
+      utterances: ["how is covid transmitted", "how is coronavirus transmitted", "how is covid19 spread", "how does covid spread", "what makes coronavirus spread", "how do others get infected by covid", "how do others get infected by coronavirus", "why does coronavirus spread from one person to another", "can coronavirus spread indoors", "indoors transmission", "can singing spread covid", "can sneezing on someone cause covid", "can particles spread covid", "can sneezing on someone spread covid", "can you spread covid in a plane", "can droplets spread covid", "can droplets spread coronavirus", "how does a virus like covid spread", "when does a virus like covid 19 spread", "how does airborne transmission happen", "can covid be spread in the air"],
+      answers: [
+        "transmission",
       ],
     },
 ];
