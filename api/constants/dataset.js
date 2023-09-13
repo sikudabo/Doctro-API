@@ -95,6 +95,13 @@ const dataset = [
       answers: [
         "asymptomatic illness",
       ],
+    },
+    {
+      intent: "bot.asymptomaticSpreadDisease",
+      utterances: ["can you still spread covid if you are asymptomatic", "can someone without symptoms spread covid", "can someone spread covid even if they are not sick", "can someone spread the illness even if they are not showing symptoms", "can a person who seems healthy spread covid", "is there a risk of giving covid to someone even if you have no symptoms", "can someone who isnt sick spread covid", "can you spread covid even if you are not sick", "is it possible to spread covid without symptoms", "are asymptomatic people able to spread covid", "can i spread covid even if i feel healthy", "can i spread covid if i am not coughing", "can someone with no signs of covid spread it", "is it dangerous to be around someone without symptoms if they have covid", "is there a risk of spreading covid even if you dont have symptoms", "can asymptomatic people sprea covid-19", "is it dangerous to be around an asymptomatic person", "is it dangerous even if i have no symptoms", "can i spread covid even if im healthy", "can a healthy person spread covid-19", "is it risky to be around someone without symptoms", "how risky is it if someone is asymptomatic", "is there a risk of spreading covid if you are asymptomatic", "is covid dangerous if you are asymptomatic"],
+      answers: [
+        "can asymptomatic spread",
+      ],
     }
 ];
 

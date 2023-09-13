@@ -404,6 +404,11 @@ const handleQuery = async (questionType, res) => {
         return;
     }
 
+    else if (questionType === 'can asymptomatic spread') {
+        const answer = 'Yes, people who are asymptomatic can still spread Covid-19 to other individuals. Make sure to be safe around those you come in contact with including family, friends, schoolmates, co-workers, people with compromised immune systems and others.';
+        res.status(200).json({ answer, isSuccess: true });
+    }
+
     else {
         res.status(200).json({ answer: 'I could not find an answer to that question', isSuccess: true });
     }
