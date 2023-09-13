@@ -1,7 +1,24 @@
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
+const errorHandler = require('errorhandler');
+const http = require('http');
+const logger = require('morgan');
 const cerebrum = require('cerebrum.js');
 const fs = require('fs');
 const rdfStore = require('rdfstore');
-const CoreNlp = require('corenlp');
+
+app.set('appName', 'DoctroAPI');
+app.set('port', process.env.PORT || 3001);
+
+app.use(cookieParser());
+app.use(logger('dev'));
+app.use(errorHandler());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded(({ extended: true })));
+app.use(cors());
 
 const handleQuery = async (questionType) => {
     console.log('The question type is:', questionType);
