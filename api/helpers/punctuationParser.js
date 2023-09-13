@@ -14,3 +14,5 @@ function punctuationParser(question) {
 
     return newQuestion;
 }
+
+module.exports = punctuationParser;
