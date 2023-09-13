@@ -124,6 +124,20 @@ const dataset = [
         "pregnancy risk",
       ],
     },
+    {
+      intent: "bot.infectionComplications",
+      utterances: ["can your liver be harmed after infection", "can your heart be injured from covid", "what can happen to your liver if you have covid", "covid and liver enzymes", "are there complications from covid-19", "are there complications from covid", "are there complications from getting infected", "covid compliactions aftwerwards", "secondary diseases from covid", "what are the complications associated with infection", "complications from covid-19 infection", "what are the complications from covid-19", "can i have complicationsf rom covid", "is my heart at risk from cocid", "is pneumonia a risk after covid-19", "what are the respiratory issues assocated with covid-19", "what are additional complications from infection", "what are the health complications that can come from covid", "which complications linger after covid", "which complications is a person at risk for after infection", "which complications might one have after infection", "what are some postinfection complications", "what are the post infection complications of covid", "what are the post infection complications of covid-19", "what are secondary complications after covid", "what are coexisting covid-19 complications", "which complications am i at risk from after covid", "what is the risk in terms of complications from covid", "am i at risk of other complications from covid"],
+      answers: [
+        "infection complications",
+      ],
+    },
+    {
+      intent: "bot.liverRisk",
+      utterances: ["what percentage of people have elevated liver enzymes after covid", "how many people have liver issues after covid", "can covid impact your liver", "can covid destroy your liver", "elevated liver enzymes after covid", "what can happen to your liver after infection", "can covid 19 injure your liver", "what percentage of people have liver issues after covid", "how many people have liver issues after infection", "percentage of people with liver complications after covid"],
+      answers: [
+        "liver risk",
+      ],
+    },
 ];
 
 module.exports = dataset;
