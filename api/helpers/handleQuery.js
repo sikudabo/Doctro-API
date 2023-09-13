@@ -1,18 +1,20 @@
 const fs = require('fs');
 const rdfStore = require('rdfstore');
 
-const handleQuery = async (questionType) => {
+const handleQuery = async (questionType, res) => {
     console.log('The question type is:', questionType);
-    
+
     if (questionType === 'covid definition') {
-        rdfStore.create((err, store) => {
+       
+        rdfStore.create(async (err, store) => {
+
             if (err) {
                 console.log('Error:', err.message);
-                return;
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
             }
-        
-            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
-            store.load('text/turtle', rdf, (s, d) => {
+
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
+            await store.load('text/turtle', rdf, async (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbo: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
                                PREFIX dbr: <http://purl.org/dc/elements/1.1/>
@@ -21,22 +23,23 @@ const handleQuery = async (questionType) => {
                                  ?covid dbr:description ?description .
                                }
                 `;
-                store.execute(query, (success, results) => {
-                    return results[0].description.value;
+                await store.execute(query, async (success, results) => {
+                    console.log('current answer is:', results[0].description.value);
+                    answer = await results[0].description.value;
+                    res.status(200).json({ answer: answer, isSuccess: true, });
                 });
             });
         });
-        return;
     }
 
-    if (questionType === 'covid discovered date') {
+    else if (questionType === 'covid discovered date') {
         rdfStore.create((err, store) => {
             if (err) {
                 console.log('Error:', err.message);
-                return;
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
             }
         
-            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -48,21 +51,22 @@ const handleQuery = async (questionType) => {
                                }
                 `;
                 store.execute(query, (success, results) => {
-                    return results[0].discoveredDate.value;
+                    const answer = results[0].discoveredDate.value;
+                    res.status(200).json({ answer, isSuccess: true });
                 });
             });
         });
         return;
     }
 
-    if (questionType === 'covid symptoms') {
+    else if (questionType === 'covid symptoms') {
         rdfStore.create((err, store) => {
             if (err) {
                 console.log('Error:', err.message);
-                return;
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
             }
         
-            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -74,28 +78,29 @@ const handleQuery = async (questionType) => {
                                }
                 `;
                 store.execute(query, (success, results) => {
-                    const res = results[0].symptom.value.split('/');
+                    const currentRes = results[0].symptom.value.split('/');
                     let myStrings = [];
                     results.forEach((rest, index) => {
                         const currentRes = rest.symptom.value.split('/');
                         const myRes = currentRes[currentRes.length - 1].replaceAll('_', ' ');
                         myStrings.push(myRes);
                     });
-                    return myStrings.toString().replaceAll(',', ', ') + '.';
+                    const answer = myStrings.toString().replaceAll(',', ', ') + '.';
+                    res.status(200).json({ answer, isSuccess: true });
                 });
             });
         });
         return;
     }
 
-    if (questionType === 'type of disease') {
+    else if (questionType === 'type of disease') {
         rdfStore.create((err, store) => {
             if (err) {
                 console.log('Error:', err.message);
-                return;
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
             }
         
-            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -108,22 +113,22 @@ const handleQuery = async (questionType) => {
                 `;
                 store.execute(query, (success, results) => {
                     const result = results[0].type.value.split('/');
-                    const finalResult = 'Covid 19 is a ' + result[result.length - 1].replace('_', ' ') + ' within the Coronavirus family' + '.';
-                    return finalResult;
+                    const answer = 'Covid 19 is a ' + result[result.length - 1].replace('_', ' ') + ' within the Coronavirus family' + '.';
+                    res.status(200).json({ answer, isSuccess: true });
                 });
             });
         });
         return;
     }
 
-    if (questionType === 'where did covid start') {
+    else if (questionType === 'where did covid start') {
         rdfStore.create((err, store) => {
             if (err) {
                 console.log('Error:', err.message);
-                return;
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
             }
         
-            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -136,22 +141,22 @@ const handleQuery = async (questionType) => {
                                }
                 `;
                 store.execute(query, (success, results) => {
-                    const response = `Covid 19 started in ${results[0].origination.value} on ${results[0].discoveredDate.value}.`;
-                    return response;
+                    const answer = `Covid 19 started in ${results[0].origination.value} on ${results[0].discoveredDate.value}.`;
+                    res.status(200).json({ answer, isSuccess: true });
                 });
             });
         });
         return;
     }
 
-    if (questionType === 'death toll') {
+    else if (questionType === 'death toll') {
         rdfStore.create((err, store) => {
             if (err) {
                 console.log('Error:', err.message);
-                return;
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
             }
         
-            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -164,22 +169,22 @@ const handleQuery = async (questionType) => {
                 `;
                 store.execute(query, (success, results) => {
                     const stringNum = results[0].deathToll.value;
-                    const result = `${stringNum} have died from Covid-19 since 2019.`;
-                    return result;
+                    const answer = `${stringNum} have died from Covid-19 since 2019.`;
+                    res.status(200).json({ answer, isSuccess: true });
                 });
             });
         });
         return;
     }
 
-    if (questionType === 'total cases') {
+    else if (questionType === 'total cases') {
         rdfStore.create((err, store) => {
             if (err) {
                 console.log('Error:', err.message);
-                return;
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
             }
         
-            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -192,22 +197,22 @@ const handleQuery = async (questionType) => {
                 `;
                 store.execute(query, (success, results) => {
                     const stringNum = results[0].totalCases.value;
-                    const result = `There have been ${stringNum} total Covid-19 cases since 2019.`;
-                    return result;
+                    const answer = `There have been ${stringNum} total Covid-19 cases since 2019.`;
+                    res.status(200).json({ answer, isSuccess: true });
                 });
             });
         });
         return;
     }
 
-    if (questionType === 'continent most deaths') {
+    else if (questionType === 'continent most deaths') {
         rdfStore.create((err, store) => {
             if (err) {
                 console.log('Error:', err.message);
-                return;
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
             }
         
-            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -221,21 +226,21 @@ const handleQuery = async (questionType) => {
                 store.execute(query, (success, results) => {
                     const answer = results[0].regionMostDeaths.value;
                     const result = `${answer} is the region with the most Covid-19 deaths since the pandemic began.`;
-                    return result;
+                    res.status(200).json({ answer: result, isSuccess: true });
                 });
             });
         });
         return;
     }
 
-    if (questionType === 'continent least deaths') {
+    else if (questionType === 'continent least deaths') {
         rdfStore.create((err, store) => {
             if (err) {
                 console.log('Error:', err.message);
-                return;
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
             }
         
-            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -249,21 +254,21 @@ const handleQuery = async (questionType) => {
                 store.execute(query, (success, results) => {
                     const answer = results[0].regionLeastDeaths.value;
                     const result = `${answer} is the region with the least Covid-19 deaths since the pandemic began.`;
-                    return result;
+                    res.status(200).json({ answer: result, isSuccess: true });
                 });
             });
         });
         return;
     }
 
-    if (questionType === 'other names') {
+    else if (questionType === 'other names') {
         rdfStore.create((err, store) => {
             if (err) {
                 console.log('Error:', err.message);
-                return;
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
             }
         
-            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -281,21 +286,22 @@ const handleQuery = async (questionType) => {
                         myStrings.push(otherName.otherName.value);
                     });
 
-                    return myStrings.toString().replaceAll(',', ', ');
+                    const answer = myStrings.toString().replaceAll(',', ', ');
+                    res.status(200).json({ answer, isSuccess: true });
                 });
             });
         });
         return;
     }
 
-    if (questionType === 'mild illness') {
+    else if (questionType === 'mild illness') {
         rdfStore.create((err, store) => {
             if (err) {
                 console.log('Error:', err.message);
-                return;
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
             }
         
-            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -308,22 +314,22 @@ const handleQuery = async (questionType) => {
                 `;
                 store.execute(query, (success, results) => {
                     const answer = `Covid-19 symptoms are mild ${results[0].mildSymptomsPercentage.value} of the time.`;
-                    return answer;
+                    res.status(200).json({ answer, isSuccess: true });
                 });
             });
         });
         return;
     }
 
-    if (questionType === 'severe illness') {
+    else if (questionType === 'severe illness') {
         console.log('I am being hit');
         rdfStore.create((err, store) => {
             if (err) {
                 console.log('Error:', err.message);
-                return;
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
             }
         
-            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -336,22 +342,22 @@ const handleQuery = async (questionType) => {
                 `;
                 store.execute(query, (success, results) => {
                     const answer = `Covid-19 symptoms are severe in ${results[0].severeSymptomsPercentage.value} of cases.`;
-                    return answer;
+                    res.status(200).json({ answer, isSuccess: true });
                 });
             });
         });
         return;
     }
 
-    if (questionType === 'critical illness') {
+    else if (questionType === 'critical illness') {
         console.log('I am being hit');
         rdfStore.create((err, store) => {
             if (err) {
                 console.log('Error:', err.message);
-                return;
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
             }
         
-            const rdf = fs.readFileSync(__dirname + '../../rdf-store/covid-19.ttl').toString();
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
             store.load('text/turtle', rdf, (s, d) => {
                 const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                                PREFIX dbd: <https://www.doctro.com/ontology/>
@@ -364,12 +370,16 @@ const handleQuery = async (questionType) => {
                 `;
                 store.execute(query, (success, results) => {
                     const answer = `Covid-19 symptoms are crtical in ${results[0].criticalSymptomsPercentage.value} of cases.`;
-                    return answer;
+                    res.status(200).json({ answer, isSuccess: true });
                 });
             });
         });
         return;
     }
 
-    return "no answer found";
+    else {
+        res.status(200).json({ answer: 'I could not find an answer to that question', isSuccess: true });
+    }
 }
+
+module.exports = handleQuery;

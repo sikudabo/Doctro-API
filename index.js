@@ -12,7 +12,7 @@ const rdfStore = require('rdfstore');
 const { AnswerQuestion } = require('./api');
 
 app.set('appName', 'DoctroAPI');
-app.set('port', process.env.PORT || 3001);
+app.set('port', process.env.PORT || 3018);
 
 app.use(cookieParser());
 app.use(logger('dev'));
@@ -514,11 +514,13 @@ setTimeout(askQuestion, 1000); */
 
 app.use(AnswerQuestion);
 
-app.get('*', (req, res) => {
+
+app.get('/', (req, res) => {
     res.status(200).json({ status: 'running', message: 'Welcome to the Doctro API!' });
 });
 
 const server = http.createServer(app);
+console.log('Hello');
 
 server.listen(app.get('port'), () => {
     console.log('Server listening on port:', app.get('port'));
@@ -529,4 +531,7 @@ server.listen(app.get('port'), () => {
     // console.log(`Error: ${err.message}`);
     console.log(err);
 }); */
+
+console.log('Hello');
+
 
