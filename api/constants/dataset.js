@@ -43,7 +43,7 @@ const dataset = [
     },
     {
         intent: "bot.totalCases",
-        utterances: ["how many times has covid-19 been diagnosed", "instances of covid", "instances of covid-19", "total cases", "how many covid-19 cases have their been", "total number of covid-19 cases", "covid 19 cases", "number of cases", "how many covid-19 cases have their been", "total number of sars cov-2 cases", "how many sars cov-2 cases", "total amount of confirmed cases", "how many covid-19 cases have their been", "total number of covid cases", "estimate of how many covid-19 cases there have been"],
+        utterances: ["how many times has covid-19 been diagnosed", "how many have caught covid", "how many caught covid-19", "how many people caught the disease", "how many people have caught covid", "instances of covid", "instances of covid-19", "total cases", "how many covid-19 cases have their been", "total number of covid-19 cases", "covid 19 cases", "number of cases", "how many covid-19 cases have their been", "total number of sars cov-2 cases", "how many sars cov-2 cases", "total amount of confirmed cases", "how many covid-19 cases have their been", "total number of covid cases", "estimate of how many covid-19 cases there have been"],
         answers: [
           "total cases",
         ],
