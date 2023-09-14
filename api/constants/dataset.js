@@ -222,6 +222,13 @@ const dataset = [
         "brain impact",
       ],
     },
+    {
+      intent: "bot.gastroIntestinal",
+      utterances: ["gastrointestinal", "what does covid do to the intestines", "what is the impact on the intestines", "how does covid impact the gastro system", "does covid harm the gastro system", "will covid harm my intestines", "will covid19 mess up my intestines", "what does covid do to my intenstines", "bowel movements", "does covid cause diarrhea", "why does covid cause diarrhea", "loose stool", "loose stools", "does covid cause loose stoos", "intestinal damage", "intestinal impact from covid"],
+      answers: [
+        "gastrointestinal impact",
+      ],
+    },
 ];
 
 module.exports = dataset;
