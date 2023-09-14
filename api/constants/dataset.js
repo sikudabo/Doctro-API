@@ -159,6 +159,20 @@ const dataset = [
         "entry points",
       ],
     },
+    {
+      intent: "bot.infectiousness",
+      utterances: ["when is someone most likely to spread covid", "when is someone most likely to spread coronavrius", "when is someone the most infectious", "when is someone most likely to spread covid", "during which timeframe is someone likely to spread covid", "when am i the most contagious", "when is someone the most contagious", "during which timeframe is someone contagious", "when is the peak infectiousness", "when is someone most likely to spread covid", "when is peak contagiousness", "when am i contagious", "when is someone contagious", "peak contagiousness", "peak spreading"],
+      answers: [
+        "infectiousness",
+      ],
+    },
+    {
+      intent: "bot.outsideViralDestruction",
+      utterances: ["can cleaning prevent infection", "how can i clean to prevent covid", "which cleaning tools should i use to proect against covid", "what should i use to clean to prevent infection", "can cleaning stop the infection", "disinfectants covid", "uvc covid", "uv c covid", "can uvc kill covid", "can disinfectant kill covid", "what do disinfectents do agains covid", "what destroys covid outside of the body", "can soap destroy covid", "can soap destroy covid-19", "can soap destroy coronavirus", "what destroys covid outside of the body", "how do you protect surfaces from covid", "what destroys covid externally", "can heat destroy covid", "what does heat do to covid", "how to clean to protect covid", "what helps prevent infection outside of the body", "what keeps covid off of surfaces", "what protects surfaces from covid", "can cleaning alcohol get rid of covid", "what kills covid outside of the body", "hot to protect against covid in the home", "how to have a clean environment to prevent covid", "what can i do to have a cleaner environment against covid", "should you clean to prevent covid", "covid cleaning"],
+      answers: [
+        "outside viral destruction",
+      ],
+    },
 ];
 
 module.exports = dataset;
