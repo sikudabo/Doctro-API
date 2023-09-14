@@ -201,6 +201,13 @@ const dataset = [
         "organs impacted",
       ],
     },
+    {
+      intent: "bot.respiratoryImpact",
+      utterances: ["how does covid impact the respiratory system", "what is the impact to the respiratory system", "how is the respiratory system impacted", "how does covid attack the respiratory system", "how is the respiritory system affected", "respiratory affect", "affect on respiratory system", "how is the respiratory system damaged", "what does coronavirus do to the respiratory system", "how does coronavirus target the respiratory system", "what does coronavirus do to the respiratory system"],
+      answers: [
+        "respiratory impact",
+      ],
+    },
 ];
 
 module.exports = dataset;
