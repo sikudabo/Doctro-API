@@ -189,9 +189,16 @@ const dataset = [
     },
     {
       intent: "bot.organMostEffected",
-      utterances: ["how does covid impact the lungs", "what does covid do to attack the lungs", "how does covid infect the lungs", "which organ is hurt the most by covid", "which organ does covid primarily attack", "which organ is affected the most by covid", "which organ does coronavirus affect the most", "which part of the body is most effected by covid", "which organ is most effect by covid19", "which organ is most impacted by coronavirus", "which organ is hit hardest by covid", "which organ is at the most risk for covid", "are your lungs in danger from covid", "what is the risk to your lungs", "how does covid impact my lungs", "how does coronavirus impact my lungs", "what happens to my lungs with covid", "which organ is damaged the most by covid", "primary organ impacted", "primary organ effected"],
+      utterances: ["what does covid 19 do to the lungs", "how does covid impact the lungs", "what does covid do to attack the lungs", "how does covid infect the lungs", "which organ is hurt the most by covid", "which organ does covid primarily attack", "which organ is affected the most by covid", "which organ does coronavirus affect the most", "which part of the body is most affected by covid", "which organ is most affect by covid19", "which organ is most impacted by coronavirus", "which organ is hit hardest by covid", "which organ is at the most risk for covid", "are your lungs in danger from covid", "what is the risk to your lungs", "how does covid impact my lungs", "how does coronavirus impact my lungs", "what happens to my lungs with covid", "which organ is damaged the most by covid", "primary organ impacted", "primary organ effected"],
       answers: [
         "organ most effected",
+      ],
+    },
+    {
+      intent: "bot.organsImpacted",
+      utterances: ["which organs does covid19 hit the hardest", "which organs does covid 19 attack", "what is the pathophysiology of covid 19", "which organs are impacted the most", "which organs are most affected by covid 19", "which organs are most affected by coronavirus", "which organs are most impacted by covid", "which organs are hit the hardest by covid", "how many organs are impacted by covid", "what are the main organs affected by covid 19", "which organs are the most impacted by covid19"],
+      answers: [
+        "organs impacted",
       ],
     },
 ];
