@@ -50,14 +50,14 @@ const dataset = [
     },
     {
         intent: "bot.mostDeathsRegion",
-        utterances: ["which region has the most covid deaths", "which content has the most covid deaths", "most covid deaths by region", "which region has the highest death toll", "highest death toll by region", "which continent has the most covid deaths", "most covid-19 deaths continent", "continent with most covid deaths", "highest covid deaths region", "continent with highest death toll"],
+        utterances: ["area with the most covid infections", "area with the most covid19 infections", "area with the most amount of infections", "area with the most covid deaths", "area has the most covid deaths", "which region has the most covid deaths", "which content has the most covid deaths", "most covid deaths by region", "which region has the highest death toll", "highest death toll by region", "which continent has the most covid deaths", "most covid-19 deaths continent", "continent with most covid deaths", "highest covid deaths region", "continent with highest death toll"],
         answers: [
           "continent most deaths",
         ],
     },
     {
         intent: "bot.leastDeathsByRegion",
-        utterances: ["which contenent has the fewest deaths", "which area has the fewest deaths", "which reigion has the fewest covid-19 deaths", "which region has the least covid-19 deaths", "which country has the least covid-19 deaths", "who has the least covid-19 deaths", "does africa have the least covid-19 deaths", "where have their been the fewest covid deaths", "where have their beeen the fewest deaths from covid-19", "which continent has the least covid-19 deaths", "which country has the least covid-19 cases", "which area has the fewest covid-19 cases"],
+        utterances: ["area with the least infections", "area with the least coronavirus infections", "area with the least covid19 infections", "which area has had the least covid deaths", "area with the least covid deaths", "which contenent has the fewest deaths", "which area has the fewest deaths", "which reigion has the fewest covid-19 deaths", "which region has the least covid-19 deaths", "which country has the least covid-19 deaths", "who has the least covid-19 deaths", "does africa have the least covid-19 deaths", "where have their been the fewest covid deaths", "where have their beeen the fewest deaths from covid-19", "which continent has the least covid-19 deaths", "which country has the least covid-19 cases", "which area has the fewest covid-19 cases"],
         answers: [
           "continent least deaths",
         ],
@@ -171,6 +171,27 @@ const dataset = [
       utterances: ["can cleaning prevent infection", "how can i clean to prevent covid", "which cleaning tools should i use to proect against covid", "what should i use to clean to prevent infection", "can cleaning stop the infection", "disinfectants covid", "uvc covid", "uv c covid", "can uvc kill covid", "can disinfectant kill covid", "what do disinfectents do agains covid", "what destroys covid outside of the body", "can soap destroy covid", "can soap destroy covid-19", "can soap destroy coronavirus", "what destroys covid outside of the body", "how do you protect surfaces from covid", "what destroys covid externally", "can heat destroy covid", "what does heat do to covid", "how to clean to protect covid", "what helps prevent infection outside of the body", "what keeps covid off of surfaces", "what protects surfaces from covid", "can cleaning alcohol get rid of covid", "what kills covid outside of the body", "hot to protect against covid in the home", "how to have a clean environment to prevent covid", "what can i do to have a cleaner environment against covid", "should you clean to prevent covid", "covid cleaning"],
       answers: [
         "outside viral destruction",
+      ],
+    },
+    {
+      intent: "bot.covidBats",
+      utterances: ["did covid come from bats", "covid 19 and bats", "coronavirus and bats", "did coronavirus come from bats", "did sarscov2 come from bats", "sars and bats", "which animal did covid come from", "what animal did coronavirus come from", "bat covid relationship", "what is the relationship between bats and covid", "covid and bats", "which bird did covid come from", "did covid come from a bird", "did covid leap from an animal to humans", "covid and bats"],
+      answers: [
+        "covid bats",
+      ],
+    },
+    {
+      intent: "bot.whatIsAVariant",
+      utterances: ["what is a covid variant", "what doe people mean by variant", "what is a variant", "what is the definition of a variant", "whaat is the definition of a covid-19 variant", "what ist he definition of the sarscov2 variants", "what are variants", "what do doctors mean by variant", "how do you define variant"],
+      answers: [
+        "what is a variant",
+      ],
+    },
+    {
+      intent: "bot.organMostEffected",
+      utterances: ["how does covid impact the lungs", "what does covid do to attack the lungs", "how does covid infect the lungs", "which organ is hurt the most by covid", "which organ does covid primarily attack", "which organ is affected the most by covid", "which organ does coronavirus affect the most", "which part of the body is most effected by covid", "which organ is most effect by covid19", "which organ is most impacted by coronavirus", "which organ is hit hardest by covid", "which organ is at the most risk for covid", "are your lungs in danger from covid", "what is the risk to your lungs", "how does covid impact my lungs", "how does coronavirus impact my lungs", "what happens to my lungs with covid", "which organ is damaged the most by covid", "primary organ impacted", "primary organ effected"],
+      answers: [
+        "organ most effected",
       ],
     },
 ];
