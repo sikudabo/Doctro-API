@@ -215,6 +215,13 @@ const dataset = [
         "nervous system impact",
       ],
     },
+    {
+      intent: "bot.brainImpact",
+      utterances: ["how does covid affect the brain", "brain impact", "how does covid effect the brain", "how does coronavirus impact the brain", "how is the brain attacked", "what does covid do to the brain", "how does covid harm the brain", "does covid impact the brain", "does covid19 affect the brain", "what happens to the neuroligcal", "how does covid impact someone neurologically", "brain tissue", "can you lose brain tissue from covid", "does covid harm the brain", "how does covid harm brain", "brain with covid", "what does covid do to the brain", "how is the brain impacted by covid", "why does covid impact the brain", "is there evidence that covid impacts the brain"],
+      answers: [
+        "brain impact",
+      ],
+    },
 ];
 
 module.exports = dataset;
