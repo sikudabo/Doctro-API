@@ -208,6 +208,13 @@ const dataset = [
         "respiratory impact",
       ],
     },
+    {
+      intent: "bot.nervousSystemImpact",
+      utterances: ["what does covid19 do to the nervous system", "how does covid impact the nervous system", "impact on nervous system", "does covid harm the nervous system", "does coronavirus harm the nervous system", "what happens to the nervous system", "nervous system affected", "nervous system effected", "how does covid harm the nervous system", "what will covid do to my nervous system", "covid and the nervous system", "how is my nervous system impacted by covid"],
+      answers: [
+        "nervous system impact",
+      ],
+    },
 ];
 
 module.exports = dataset;
