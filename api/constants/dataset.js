@@ -264,6 +264,13 @@ const dataset = [
         "recommended vaccines",
       ],
     },
+    {
+      intent: "bot.vaccineDeathsPrevented",
+      utterances: ["does vaccination protect you", "is the vaccine protective", "how does the vaccine change the odds of death:", "can boosters increase survival rates", "can boosters increase chances of survival", "should i get a booster dose", "should i get a booster vaccine", "how many deaths did covid vaccines prevent", "how many deaths did covid19 vaccines prevent", "how many deaths did vaccines prevent", "how many deaths were prevented by the vaccine", "number of deaths prevented from vaccine", "does vaccination prevent deaths", "can vaccination increase chances of survival", "does vaccination prevent deaths", "chances of living if vaccinated", "chances of living if unvaccinated", "do i have a higher chance of dying if unvaccinated", "chances of living if unvaccinated", "chances of catching covid if unvaccinated", "chances of getting covid if vaccinated", "odds of getting covid unvaccinated", "odds of getting covid if vaccinatd", "odds of survival with vaccine", "odds of survival without vaccine", "chances ill die without vaccine", "chance ill live with vaccine", "chance ill die without vaccine", "chance ill die with vaccine", "how likely am i to die if i am not vaccinated", "how likely am i to live if vaccinated"],
+      answers: [
+        "vaccine deaths prevented",
+      ],
+    },
 ];
 
 module.exports = dataset;
