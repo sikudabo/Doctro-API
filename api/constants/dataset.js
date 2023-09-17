@@ -229,6 +229,13 @@ const dataset = [
         "gastrointestinal impact",
       ],
     },
+    {
+      intent: "bot.spikeProtein",
+      utterances: ["what is a spike protein", "spike protein definition", "what is a covid spike protein", "define a spike protein", "how is a spike protein defined", "what is a spike protein", "how do we define spike proteins", "can you tell me the definition of a spike protein", "define a spike protein"],
+      answers: [
+        "spike protein defined",
+      ],
+    },
 ];
 
 module.exports = dataset;
