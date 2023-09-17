@@ -299,6 +299,13 @@ const dataset = [
         "should not get vaccine",
       ],
     },
+    {
+      intent: "bot.covidTreatments",
+      utterances: ["medications to treat", "which treatments are available for", "which medicationsa are available for", "medications to take", "which medications should i take for", "which medications can i take", "which treatments should i take", "what treatments are there for covid19", "what treatments are there for covid 19", "what treatments are there for covid", "which treatments are there for covid19", "which treatments are there for covid 19", "which treatments are there for covid", "what medications treat covid 19", "which medications fight covid", "what medications should i take", "medications i should take for covid", "medications to fight covid", "covid medications", "fda approved medications", "fda approved treatments", "which medications has the fda approved", "fda approved medications for covid", "medications for covid", "medications for covid19", "medications for covid 19", "what medications can i take", "can convalescent plasma treat covid", "can i use convalescent plasma", "can remdesivir treat covid", "can remdesivir treat covid19", "can remdesivir treat covid 19", "can molnupiravir treat covid 19", "can molnupiravir treat covid", "can molnupiravir treat covid19", "nirmatrelvir covid", "can nirmatrelvir tream covid 19", "can nirmatrelvir tream covid19", "can nirmatrelvir tream covid", "ritonavir covid", "can ritonavir treat covid", "ritonavir covid", "can ritonavir treat covid19", "ritonavir covid", "can ritonavir treat covid 19", "medications that treat covid 19", "treatment for covid 19", "treatment for covid19", "treatment for covid", "treatments for covid 19"],
+      answers: [
+        "covid treatments",
+      ],
+    },
 ];
 
 module.exports = dataset;
