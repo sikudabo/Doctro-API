@@ -324,7 +324,7 @@ const dataset = [
       intent: "bot.covidChildren",
       utterances: ["how does covid 19 impact children", "how does covid19 impact children", "how does covid impact children", "how does covid 19 impact kids", "how does covid19 impact kids", "how does covid impact kids", "children and covid", "kids and covid", "how does covid 19 impact babies", "how does covid19 impact babies", "how does covid impact babies", "how does covid impact toddlers", "how does covid19 impact toddlers", "how does covid 19 impact toddlers", "children with covid 19", "are kids at risk of dying from covid", "are kids are risk of dying from covid19", "are kids at risk of dying from covid 19", "how are children impacted by covid", "is my child in danger from covid 19", "how likely is a child to die from covid 19", "child covid", "children covid", "babies covid", "toddlers covid", "kids covid", "kid covid", "what affect does covid have on children", "affect on children", "affect on kids", "effect on children", "effect on kids", "covid response from children", "covid response from kids", "covid risk for children", "covid risk for child", "covid risk for baby", "covid risk for kid", "covid risk for toddler", "kid", "child", "toddler", "baby"],
       answers: [
-        "covid chidlren",
+        "covid children",
       ],
     },
 ];
