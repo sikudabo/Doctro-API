@@ -243,6 +243,27 @@ const dataset = [
         "diagnosing covid",
       ],
     },
+    {
+      intent: "bot.covidPrevention",
+      utterances: ["prevent covid", "prevent covid 19", "prevent covid19", "how can i prevent covid", "how can i prevent covid 19", "how can i prevent covid19", "preventing covid", "prevention methods", "how do i prevent from having covid", "can can i avoid catching covid", "avoid infection", "avoiding infaction", "how can i prevent covid", "preventing covid", "prevention methods", "how to stay safe from covid", "avoid infection", "how to avoid infection", "how to avoid getting covid", "how to avoid the virus", "how to protect against infection", "how to protect against covid", "how to protect against covid19", "how to defend against covid", "how to not get covid", "how to build a healthy immune system", "avoid catching covid", "how to not catch covid", "protection against catching covid", "protection against covid", "avoid getting sick", "avoid catching covid", "how to avoid covid"],
+      answers: [
+        "covid prevention",
+      ],
+    },
+    {
+      intent: "bot.vaccineQuestion",
+      utterances: ["should i get vaccinated", "does the cdc recommend getting vaccinated", "which vaccine should i get", "does the cdc want people to be vaccinated", "is it a good idea to get vaccinated", "do doctors recommend the vaccine", "who should get vaccinated", "should i get vaccinated", "can vaccinated", "should i get the jab", "is the jab recommended", "who does the cdc say should be vaccinated", "should people be vaccinated"],
+      answers: [
+        "vaccine question",
+      ],
+    },
+    {
+      intent: "bot.recommendedVaccines",
+      utterances: ["which vaccines are approved by the fda", "fda approved vaccines", "what vaccines are approved by the fda", "vaccines with fda approval", "fda approved vaccines", "fda recommended vaccines", "which vaccine should a person get", "what vaccine should a person get", "what vaccines are popular", "which vaccines are popular", "popular vaccines", "which vaccinees does the cdc recommend", "recommended vaccines", "recommended vaccines in the united states", "recommended vaccines in america", "which vaccine to get", "which covid 19 vaccine", "which vaccines are there", "what vaccine should i get", "which vaccine should i get", "what are my vaccine options", "what are my vaccine choices", "best vaccine", "best vaccine to get", "top vaccine", "top covid vaccine", "top covid19 vaccines", "most popular vaccines", "should i get the pfizer vaccine", "should i get the moderna vaccine", "should i get the pfizer or moderna vaccine", "should i get the moderna or pfizer vaccine"],
+      answers: [
+        "recommended vaccines",
+      ],
+    },
 ];
 
 module.exports = dataset;
