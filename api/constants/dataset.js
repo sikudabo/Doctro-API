@@ -1,7 +1,7 @@
 const dataset = [
     {
       intent: "bot.whatiscovid",
-      utterances: ["what is covid", "what is covid-19", "define covid", "define covid-19", "covid definition", "what is the definition of covid", "how would you define covid-19", "what is sars cov-2", "how is sars cov-2 defined", "sars cov-2", "sarscov2", "sars cov 2"],
+      utterances: ["what is covid", "what is covid-19", "what is covid 19", "define covid", "define covid-19", "covid definition", "what is the definition of covid", "how would you define covid-19", "what is sars cov-2", "how is sars cov-2 defined", "sars cov-2", "sarscov2", "sars cov 2"],
       answers: [
         "covid definition"
       ],
@@ -234,6 +234,13 @@ const dataset = [
       utterances: ["what is a spike protein", "spike protein definition", "what is a covid spike protein", "define a spike protein", "how is a spike protein defined", "what is a spike protein", "how do we define spike proteins", "can you tell me the definition of a spike protein", "define a spike protein"],
       answers: [
         "spike protein defined",
+      ],
+    },
+    {
+      intent: "bot.covidDiagnosis",
+      utterances: ["how is covid diagnosed", "diagnosing covid", "how is covid 19 diagnoses", "how is covid19 diagnosed", "how do i get diagnosed for covid", "diagnosing covid", "can a ct scan diagnose covid", "is a ct scan used to diagnose covid", "can i found out if i had covid", "how is covid tested for", "can i find out if i have antibodies", "is there an antibody test", "can i know if i had a previous covid infection", "finding out if i have been infected", "is there a test to see if someone has had covid", "test to see if someone had had covid", "test to see if someone caught covid", "how can i know if i caught covid", "can people know if they had a previous infection", "nasal swab testing", "is a nasal swab used to diagnose covid", "ct xray", "ct xrays", "is there a test for covid", "how is covid 19 tested for", "how is covid19 tested for", "imaging test", "how is an imaging test done", "how is covid tested for", "which methods are used to test covid", "how is it diagnosed", "how is covid19 diagnosed", "can covid be diagnosed", "diagnose covid", "diagnose covid19", "diagnose covid 19", "hoow long does it take for covid diagnosis result", "how long does it take for covid test results", "time for covid19 test results", "time for covid 19 test results", "time for covid test results"],
+      answers: [
+        "diagnosing covid",
       ],
     },
 ];
