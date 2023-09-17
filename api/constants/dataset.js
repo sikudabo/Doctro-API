@@ -278,6 +278,20 @@ const dataset = [
         "total vaccine doses",
       ],
     },
+    {
+      intent: "bot.whyMask",
+      utterances: ["can wearing a mask prevent illness", "can wearing a mask prevent the spread", "can wearing a mask protect other people", "can wearing a mask protect", "why do people wear masks", "does wearing a mask stop covid", "why is it a good idea to mask", "should i mask", "should kids wear a mask", "why mask", "should i wear a mask", "does wearing a mask prevent covid", "does wearing a mask prevent covid19", "does wearing a mask prevent covid 19", "does wearing a mask protect against covid", "does wearing a mask protect against covid19", "does wearing a mask protect against covid 19", "does masking protect you", "will masking protect me", "does masking stop the spread", "does masking protect people", "can wearing a mask help", "why do people wear masks", "should i wear a mask", "should i wear a mask to proteect against covid", "do masks help", "is there value in wearing a mask", "is there value in masking", "why should i mask", "why should people mask", "can a mask help me", "do masks help people"],
+      answers: [
+        "why mask",
+      ],
+    },
+    {
+      intent: "bot.J&j",
+      utterances: ["why is the johnson & johnson vaccine not recommended", "why is the j&j vaccine not recommended", "johnson and johnson", "johnson & johnson", "j&j", "j and j", "what are the dangers of the j&j vaccine", "what are the dangers of the johsnon & johnson vaccine", "what is the problem with johnson & johnson", "what are the problems with the j&j vaccine", "can you get blood clots from the covid19 vaccine", "can you get blood clots from the covid 19 vaccine", "can you get blood clots from the covid vaccine", "why is the j&j vaccine not recommended by the cdc", "can you get blood clots from vaccination", "is the vaccine associated with blood clots", "is there a risk of blood clots from the johnson & johnson vaccine", "are there blood clots from the johnson and johnson vaccine", "what is the problem with the johnson & johnson vaccine", "complications from the johnson and johnson vaccine", "why is the johnson and johnson vaccine dangerous", "why is the johnson and johnson vaccine not approved", "is the johnson and johnson vaccine recommended", "is the j&j vaccine recommended", "should someone get the j&j vaccine", "should someone get the johnson & johnson vaccine", "should someone get the j&j vaccine"],
+      answers: [
+        "j&j vaccine",
+      ],
+    },
 ];
 
 module.exports = dataset;
