@@ -306,6 +306,20 @@ const dataset = [
         "covid treatments",
       ],
     },
+    {
+      intent: "bot.usDeathToll",
+      utterances: ["how many people have died from covid19 in the us", "how many people have died from covid in the united states", "number of people who died from covid in the united states", "united states death toll", "covid deaths in the united states", "total covid deaths in the united states", "amount of people who died from covid in the us", "total patient deaths from covid in the united states", "total covid deaths in the us", "deaths in the us from covid", "how many lives lost in the us from covid", "death toll in the us", "death toll in the united states", "united states death toll", "us death toll"],
+      answers: [
+        "us death toll",
+      ],
+    },
+    {
+      intent: "bot.covidRiskFactors",
+      utterances: ["what are the risk factors for having a bad response to covid 19", "what are the risk factors for having a bad response to covid", "what are the risk factors for having a bad response to covid19", "can smoking lead to worse covid outcomes", "how does smoking impact covid 19 outcomes", "are smokers at a greater risk of dying from covid", "how does smoking impact your covid response", "how does smoking impact covid mortality", "how does smoking impact covid morbidity", "how does obesity impcat covid outcomes", "can obesity lead to worse covid outcomes", "how does obesity impact covid", "what is the prognosis for covid 19", "who is at greater risk of dying from covid", "which risk factors are associated with bad covid outcomes", "which risk factors lead to bad covid outcomes", "what is the risk of dying from covid if you smoke", "what is the risk of dying from covid if you are obese", "who is at risk of dying from covid", "who has a greater risk of dying from covid", "do i have a greater risk of dying from covid", "whhich preexisting conditions lead to covid", "who is at risk of developing a serious infection from covid"],
+      answers: [
+        "covid risk factors",
+      ],
+    },
 ];
 
 module.exports = dataset;

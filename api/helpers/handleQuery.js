@@ -1162,6 +1162,33 @@ const handleQuery = async (questionType, res) => {
         return;
     } 
 
+    else if (questionType === 'us death toll') {
+        rdfStore.create((err, store) => {
+            if (err) {
+                console.log('Error:', err.message);
+                res.status(200).json({ answer: 'There was an error retreiving that answer. Please try again', isSuccess: false });
+            }
+        
+            const rdf = fs.readFileSync(__dirname + '/covid-19.ttl').toString();
+            store.load('text/turtle', rdf, (s, d) => {
+                const query = `PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                               PREFIX dbd: <https://www.doctro.com/ontology/>
+                               PREFIX dbo: <http://www.w3.org/1999/02/22-rdf-syntax-ns/>
+                               PREFIX dbr: <http://purl.org/dc/elements/1.1/>
+                               SELECT ?usDeathToll WHERE {
+                                 ?covid foaf:name "Covid-19"@en .
+                                 ?covid dbo:usDeathToll ?usDeathToll .
+                               }
+                `;
+                store.execute(query, (success, results) => {
+                    const answer = results[0].usDeathToll.value + " have died from Covid-19 in the United States.";
+                    res.status(200).json({ answer, isSuccess: true });
+                });
+            });
+        });
+        return;
+    } 
+
     else {
         res.status(200).json({ answer: 'I could not find an answer to that question. Please either ask another question or rephrase the question.', isSuccess: true });
     }
