@@ -292,6 +292,13 @@ const dataset = [
         "j&j vaccine",
       ],
     },
+    {
+      intent: "bot.shouldNotGetVaccine",
+      utterances: ["who should not get the vaccine", "who should avoid the covid19 vaccine", "should not get the covid 19 vaccine", "who should not get vaccinated", "should i get the vaccine if i am allergic to mrna vaccines", "what if i am allergic to mrna vaccines", "allergic to mrna vaccines", "who should avoid vaccination", "who cannot get vaccinated", "what if someone is allergic to mrna vaccines", "who cannot get vaccinated", "who cannot get the covid19 vaccine", "who cannot receive the covid vaccine", "who should avoid the covid 19 vaccine", "allergic to vaccines", "what if i am allergic to vaccines", "what if someone is allergic to vaccines", "what if my child is allergic to vaccines", "what if i am allergic to injectables", "allergic to injectables", "should people allergic to injectables get the vaccine", "what if i am allergic to injectables"],
+      answers: [
+        "should not get vaccine",
+      ],
+    },
 ];
 
 module.exports = dataset;
