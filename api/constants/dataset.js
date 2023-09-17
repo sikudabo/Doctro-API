@@ -271,6 +271,13 @@ const dataset = [
         "vaccine deaths prevented",
       ],
     },
+    {
+      intent: "bot.totalVaccineDoses",
+      utterances: ["how many vaccine doses have been administered", "how many vaccines have been given", "how many doses of the vaccine havee been given", "how many shots have been given", "how many vaccinations given world wide", "How many vaccines have been taken", "how many doses of the vaccine have been given", "how many doses of the covid19 have been taken", "how many vaccine doses have been administered", "number of vaccine doses given", "how many vaccine doses given"],
+      answers: [
+        "total vaccine doses",
+      ],
+    },
 ];
 
 module.exports = dataset;
