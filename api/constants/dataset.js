@@ -327,6 +327,20 @@ const dataset = [
         "covid children",
       ],
     },
+    {
+      intent: "bot.covidImmunity",
+      utterances: ["why are some people immunine from covid", "how does a person become immunine", "why are some people immune", "covid immunity", "immunity from covid", "how do i become immunine from covid", "how do i build up my immunity", "can someone be immune from covid", "how does immunity work", "how do you become immune to covid", "does natural immunity work", "how does one acquire natural immunity", "what is natural immunity", "is natural immunity real", "is there a such thing as natural immunity", "how does a population get natural immunity", "does natural immunity exist with covid 19", "is there a such thing as natural immunity", "can there be natural immunity with covid19", "covid 19 natural immunity", "covid natural immunity", "covid19 natural immunity"],
+      answers: [
+        "covid immunity",
+      ],
+    },
+    {
+      intent: "bot.usTotalCases",
+      utterances: ["how many covid 19 cases have their been in the united states", "how many covid19 cases have their been in the united states", "how many covid cases have their been in the united states", "how many covid19 cases have their been in the us", "how many covid19 cases have their been in the us", "how many covid cases have their been in the us", "us total cases", "united states total cases", "how many people have been infected with covid 19 in the united states", "how many total infections have their been in america", "how many americans have had covid", "total number of americans who have contracted covid", "how many people in america have contracted covid", "total amount of people in the united states that have contracted covid", "us contracted covid", "how many people in america contracted covid", "total amount of americans who have caught covid", "how many people in the united states have caught covid", "total number of people in the united states who have caught covid", "how many people in america caught covid", "total number of americans who have been sick with covid", "how many americans have been sick with covid", "aggregate number of americans who have been sick with covid", "how many people who live in the united states have contracted covid"],
+      answers: [
+        "us total cases",
+      ],
+    },
 ];
 
 module.exports = dataset;
