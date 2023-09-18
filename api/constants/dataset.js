@@ -341,6 +341,13 @@ const dataset = [
         "us total cases",
       ],
     },
+    {
+      intent: "bot.deathRate",
+      utterances: ["what is the covid death rate", "covid19 death rate", "what is the covid 19 death rate", "what is the covid death rate", "what is the mortality rate", "covid mortality rate", "covid 19 mortality rate", "covid19 mortality rate", "what is the mortality rate in the us", "what is the global mortality rate", "what is the global death rate", "what is the death rate in the united stats", "death rate", "mortality rate", "what is the morality rate"],
+      answers: [
+        "mortality rate",
+      ],
+    },
 ];
 
 module.exports = dataset;
