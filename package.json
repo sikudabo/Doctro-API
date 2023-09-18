@@ -4,7 +4,7 @@
   "description": "This is the API for the doctro semantic search engine",
   "main": "index.js",
   "scripts": {
-    "start": "node optimize_for_size=460 index.js",
+    "start": "node --max-old-space-size=460 index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Simeon Ikudabo",
