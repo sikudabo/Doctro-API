@@ -1,1 +1,1 @@
-web: node --optimize-for-size --max-old-pace-size=100000 index.js
+web: node --optomize_for_size index.js
