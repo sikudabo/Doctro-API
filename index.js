@@ -35,5 +35,3 @@ server.listen(app.get('port'), () => {
 process.on('uncaughtException', err => {
     console.log(`Error: ${err.message}`);
 });
-
-
